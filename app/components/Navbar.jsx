@@ -5,8 +5,10 @@ import { FiShoppingBag } from "react-icons/fi";
 const Navbar = () => {
   return (
     <div className='navbar-container'>
-      <p className='logo'>
-        <Link href='/'>Ecomoman Store</Link>
+      <p className='logo '>
+        <Link href='/'>
+          <h3>Oman Shop</h3>
+        </Link>
       </p>
       <button type='button' className='cart-icon' onClick=''>
         <FiShoppingBag />
