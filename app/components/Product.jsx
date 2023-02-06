@@ -12,7 +12,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
             alt='product-image'
             width={250}
             height={250}
-            className='product-image'
+            className='product-image aspect-square'
           />
           <p className='product-name'>{name}</p>
           <p className='product-price'>${price}</p>

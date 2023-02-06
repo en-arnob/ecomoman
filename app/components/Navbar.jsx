@@ -12,7 +12,7 @@ const Navbar = () => {
       </p>
       <button type='button' className='cart-icon' onClick=''>
         <FiShoppingBag />
-        <span className='cart-item-qty'>1</span>
+        <span className='cart-item-qty mb-10'>1</span>
       </button>
     </div>
   );
