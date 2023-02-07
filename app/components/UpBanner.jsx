@@ -6,20 +6,24 @@ import Carousel from "react-grid-carousel";
 const UpBanner = ({ bannerD }) => {
   return (
     <div className='hero-banner-container'>
-      <div>
-        <Carousel showDots>
+      <div ml-2>
+        <Carousel showDots loop gap={5} cols={1} autoplay={2000}>
           {bannerD.map((banner, i) => (
             <Carousel.Item key={i}>
               <div class='grid md:grid-cols-2 sm:grid-cols-1 gap-4'>
-                <div>
+                <div className='h-50%'>
                   <img src={urlFor(banner.image)} width='300px' height='5px' />
                 </div>
 
-                <div>
+                <div className='h-50%'>
                   <p className='md:text-5xl sm:text-3xl'>{banner.smallText}</p>
-                  <h1>{banner.largeText1}</h1>
-                  <div>
-                    <h5>{banner.midText}</h5>
+                  <h1 className='md:text-5xl sm:text-xl'>
+                    {banner.largeText1}
+                  </h1>
+                  <div className='md:visible '>
+                    <h5 className='text-3xl mt-2 font-bold mb-2 text-red-700'>
+                      {banner.midText}
+                    </h5>
                     <p>{banner.discount}</p>
                   </div>
                 </div>
