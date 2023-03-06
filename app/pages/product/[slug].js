@@ -19,7 +19,7 @@ const ProductDetails = ({ product, products }) => {
           <div className='col-span-2'>
             <div className='flex flex-col '>
               <div className='image-container object-contain w-96'>
-                <img src={urlFor(image && image[index])} alt='' />
+                <img src={urlFor((image && image[index]) || image[0])} alt='' />
               </div>
               <div className='small-images-container'>
                 {image?.map((item, i) => (
