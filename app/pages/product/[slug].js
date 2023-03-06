@@ -8,9 +8,11 @@ import {
   AiFillStar,
 } from "react-icons/ai";
 import { Product } from "../../components";
+import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
   const [index, setIndex] = useState(0);
+  const { incQty, decQty, qty, onAdd } = useStateContext();
   const { image, name, price, details } = product;
   return (
     <div>
@@ -59,19 +61,19 @@ const ProductDetails = ({ product, products }) => {
                     <button
                       type='button'
                       class='w-10 h-10 text-center ml-2 pl-2 text-gray-600 transition hover:opacity-75'
-                      onClick=''
+                      onClick={decQty}
                     >
                       <AiOutlineMinus />
                     </button>
 
                     <span className='h-10 w-16 text-lg mt-2 border-transparent text-center'>
-                      0
+                      {qty}
                     </span>
 
                     <button
                       type='button'
                       class='w-10 h-10 text-center pl-5 leading-10 text-gray-600 transition hover:opacity-75'
-                      onClick=''
+                      onClick={incQty}
                     >
                       <AiOutlinePlus />
                     </button>
@@ -79,7 +81,11 @@ const ProductDetails = ({ product, products }) => {
                 </div>
 
                 <div className='buttons flex flex-col  gap-2'>
-                  <button type='button' className='add-to-cart' onClick=''>
+                  <button
+                    type='button'
+                    className='add-to-cart'
+                    onClick={() => onAdd(product, qty)}
+                  >
                     Add To Cart
                   </button>
                   <button type='button' className='buy-now' onClick=''>

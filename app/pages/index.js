@@ -10,7 +10,7 @@ const Home = ({ products, bannerData }) => {
       <UpBanner bannerD={bannerData.length && bannerData} />
       <div className='products-heading'>
         <h2>Best Selling Products</h2>
-        <p>Headphones</p>
+        <p>Top Products</p>
       </div>
       <div className='products-container'>
         {products?.map((product) => (
