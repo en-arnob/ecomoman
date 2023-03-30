@@ -65,9 +65,9 @@ const Cart = () => {
                     <h5>{item.name}</h5>
                     <h4>${item.price}</h4>
                   </div>
-                  <div className='flex bottom'>
+                  <div className=' bottom'>
                     <div>
-                      <p className='quantity-desc'>
+                      <p className='cursor-pointer  text-gray-600 transition hover:opacity-75 flex'>
                         <span
                           className='minus'
                           onClick={() =>
